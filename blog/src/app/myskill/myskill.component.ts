@@ -92,7 +92,8 @@ export class MyskillComponent implements OnInit {
 
   }
   onDelete($key) {
-    console.log("Dee")
+  this.itemList.remove($key);
+  this.itemArray=[]
 
   }
 }
