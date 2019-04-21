@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase,AngularFireList} from '@angular/fire/database'
 import {Observable} from 'rxjs'
+import {Router} from '@angular/router';
+
+
+
+
 @Component({
   selector: 'app-add-skill',
   templateUrl: './add-skill.component.html',
@@ -19,7 +24,7 @@ export class AddSkillComponent implements OnInit {
   }
   itemList:AngularFireList<any>
 
-  constructor(public db:AngularFireDatabase) {
+  constructor(public db:AngularFireDatabase,public route:Router) {
     this.itemList=db.list('skills')
 
   }
@@ -36,6 +41,8 @@ export class AddSkillComponent implements OnInit {
       price:this.data.price,
       notes:this.data.notes
     })
+    
+    this.route.navigate(['/myskill'])
   }
 
 }
