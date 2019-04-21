@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase,AngularFireList} from '@angular/fire/database'
 import {Observable} from 'rxjs'
 import {Router} from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 
 
