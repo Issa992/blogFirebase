@@ -19,7 +19,7 @@ export class AddSkillComponent implements OnInit {
     skill:'newSkill' ,
     city:'newCity' ,
     price:'230',
-    notes:'new notes'
+    notes:'newNotes'
   }
 
   constructor() {
