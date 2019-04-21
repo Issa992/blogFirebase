@@ -5,32 +5,31 @@
 
 
       <div class="uk-margin"> 
-          <input class="uk-input" type="text" placeholder="Name" name="name" [(ngModel)]="name">
+          <input class="uk-input" type="text" placeholder="Name" name="name" [(ngModel)]="data.name">
       </div>
       <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Phone" name="Phone" [(ngModel)]="phone" >
+          <input class="uk-input" type="text" placeholder="Phone" name="Phone" [(ngModel)]="data.phone" >
       </div>
       <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Skill" name="Skill" [(ngModel)]="skill">
+          <input class="uk-input" type="text" placeholder="Skill" name="Skill" [(ngModel)]="data.skill">
       </div>
       <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="City" name="city" [(ngModel)]="city">
+          <input class="uk-input" type="text" placeholder="City" name="city" [(ngModel)]="data.city">
       </div>
       <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Price" name="price" [(ngModel)]="price">
-      </div>
-
-
-      <div class="uk-margin">
-          <textarea class="uk-textarea" rows="5" placeholder="Notes" name="notes" [(ngModel)]="notes"></textarea>
+          <input class="uk-input" type="text" placeholder="Price" name="price" [(ngModel)]="data.price">
       </div>
 
 
+      <div class="uk-margin">
+          <textarea class="uk-textarea" rows="5" placeholder="Notes" name="notes" [(ngModel)]="data.notes"></textarea>
+      </div>
+
+
 
       <div class="uk-margin">
-          <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
         
-              <button class="uk-button uk-button-primary">Primary</button>
+              <button class="uk-button uk-button-primary">Add</button>
         
 
       </div>
