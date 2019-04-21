@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {AngularFireDatabase,AngularFireList} from '@angular/fire/database'
+import {Observable} from 'rxjs'
 @Component({
   selector: 'app-add-skill',
   templateUrl: './add-skill.component.html',
@@ -7,28 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 //
 export class AddSkillComponent implements OnInit {
-  // name :string
-  // phone: number
-  // skill :string
-  // city :string
-  // price :string
-  // notes :string
+ 
   data ={
-    name:'issa' ,
-    phone:'73' ,
-    skill:'newSkill' ,
-    city:'newCity' ,
-    price:'230',
-    notes:'newNotes'
+    name:'' ,
+    phone:'' ,
+    skill:'' ,
+    city:'' ,
+    price:'',
+    notes:''
   }
+  itemList:AngularFireList<any>
 
-  constructor() {
+  constructor(public db:AngularFireDatabase) {
+    this.itemList=db.list('skills')
 
   }
 
   ngOnInit() {
     console.log(this.data.city)
-
+  }
+  addSkill(){
+    this.itemList.push({
+      name:this.data.name ,
+      phone:this.data.phone,
+      skill:this.data.skill ,
+      city:this.data.city ,
+      price:this.data.price,
+      notes:this.data.notes
+    })
   }
 
 }

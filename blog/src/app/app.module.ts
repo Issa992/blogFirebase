@@ -12,6 +12,11 @@ import { RegisterComponent } from './register/register.component';
 import { MyskillComponent } from './myskill/myskill.component';
 import { AllskillsComponent } from './allskills/allskills.component';
 
+  import { AngularFireModule } from '@angular/fire';
+  import { environment } from '../environments/environment';
+  import { AngularFireAuthModule } from '@angular/fire/auth';
+  import { AngularFirestoreModule } from '@angular/fire/firestore';
+ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 // //build Routs
 const routs: Routes = [
@@ -39,6 +44,10 @@ const routs: Routes = [
   ],
   imports: [
     BrowserModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFireAuthModule,
+      AngularFirestoreModule,
+     AngularFireDatabaseModule,
     AppRoutingModule,
     RouterModule.forRoot(routs),
     FormsModule
