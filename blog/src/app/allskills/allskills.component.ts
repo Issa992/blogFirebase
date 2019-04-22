@@ -3,6 +3,8 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 import { Observable } from 'rxjs'
 import { Router } from '@angular/router';
 import { Action } from 'rxjs/internal/scheduler/Action';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 import { Key } from 'protractor';
 
 @Component({
@@ -16,17 +18,19 @@ export class AllskillsComponent implements OnInit {
   itemArray = []
 
   data = {
+    
     $key: '',
     name: '',
     phone: '',
     skill: '',
     city: '',
     price: '',
-    notes: ''
+    notes: '',
+    email:''
   }
   
 
-  constructor(public db: AngularFireDatabase,public route:Router) { 
+  constructor(public db: AngularFireDatabase,public route:Router,private fire:AngularFireAuth) { 
 
     this.itemList = db.list('skills')
 
@@ -46,11 +50,14 @@ export class AllskillsComponent implements OnInit {
 
 
   ngOnInit() {
+    // let user= this.fire.auth.currentUser.email;
+    // this.data.email=user;
+    // console.log("eEEEEE:"+user)
   }
   editForm($key){
     for(let value of this.itemArray){
       if (value['$key']==$key) {
-        console.log(value['$key'])
+        // console.log(value['$key'])
 
         this.data.$key=value['$key'],
         this.data.name= value['name'],
@@ -59,6 +66,7 @@ export class AllskillsComponent implements OnInit {
         this.data.city=value['city'],
         this.data.price= value['price'],
         this.data.notes= value['notes']
+        this.data.email= value['email']
         
       }
 

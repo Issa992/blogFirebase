@@ -2,7 +2,9 @@
         <table class="uk-table uk-table-divider">
             <thead>
                 <tr>
-                    <th>$key</th>
+                    <!-- <th>$key</th> -->
+                    <th>email</th>
+
                     <th>name</th>
                     <th>phone</th>
                     <th>skill</th>
@@ -14,7 +16,9 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of itemArray">
-                    <td>{{item.$key}}</td>
+                    <!-- <td>{{item.$key}}</td> -->
+                    <td>{{item.email}}</td>
+
                     <td>{{item.name}}</td>
                     <td>{{item.phone}}</td>
                     <td>{{item.skill}}</td>
@@ -37,13 +41,12 @@
                             <fieldset class="uk-fieldset">
     
     
-                                <!-- <div class="uk-margin">
-                                    <input class="uk-input" type="text" placeholder="key" name="name" [(ngModel)]="data.$key" value="{{item.$key}}">
-                                </div> -->
+                               
                                 <div class="uk-margin">
                                     <input class="uk-input" type="text" placeholder="Name" name="name"
                                         [(ngModel)]="data.name">
                                 </div>
+                                
                                 <div class="uk-margin">
                                     <input class="uk-input" type="text" placeholder="Phone" name="Phone"
                                         [(ngModel)]="data.phone">

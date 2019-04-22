@@ -17,6 +17,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AddSkillComponent implements OnInit {
  
   data ={
+    email:'',
     name:'' ,
     phone:'' ,
     skill:'' ,
@@ -26,13 +27,16 @@ export class AddSkillComponent implements OnInit {
   }
   itemList:AngularFireList<any>
 
-  constructor(public db:AngularFireDatabase,public route:Router) {
+  constructor(public db:AngularFireDatabase,public route:Router, private fire:AngularFireAuth) {
     this.itemList=db.list('skills')
 
   }
 
   ngOnInit() {
-    console.log(this.data.city)
+   let user= this.fire.auth.currentUser.email;
+   this.data.email=user;
+ 
+    console.log("useEEEEEE::::"+this.data.email)
   }
   addSkill(){
     this.itemList.push({
@@ -41,7 +45,8 @@ export class AddSkillComponent implements OnInit {
       skill:this.data.skill ,
       city:this.data.city ,
       price:this.data.price,
-      notes:this.data.notes
+      notes:this.data.notes,
+      email:this.data.email
     })
     
     this.route.navigate(['/myskill'])
