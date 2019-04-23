@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 import { Observable } from 'rxjs'
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Action } from 'rxjs/internal/scheduler/Action';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -105,6 +105,10 @@ export class AllskillsComponent implements OnInit {
     this.itemList.remove($key);
     this.itemArray=[]
   
+  }
+  moreInfo($key){
+    // console.log("KKKKK"+$key)
+    this.route.navigate(['details/'+$key])
   }
 }
 // model Class

@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MyskillComponent } from './myskill/myskill.component';
 import { AllskillsComponent } from './allskills/allskills.component';
+import { DetailsComponent } from './details/details.component';
 
   import { AngularFireModule } from '@angular/fire';
   import { environment } from '../environments/environment';
@@ -28,6 +29,8 @@ const routs: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'myskill', component: MyskillComponent},
   {path: 'allskills', component: AllskillsComponent},
+  {path: 'details/:id', component: DetailsComponent},
+
 
 
 ];
@@ -41,7 +44,8 @@ const routs: Routes = [
     LoginComponent,
     RegisterComponent,
     MyskillComponent,
-    AllskillsComponent
+    AllskillsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

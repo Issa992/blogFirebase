@@ -3,25 +3,27 @@
         <thead>
             <tr>
                 <!-- <th>$key</th> -->
-                <th>email</th>
+                <!-- <th>email</th> -->
                 <th>name</th>
-                <th>phone</th>
+                <!-- <th>phone</th> -->
                 <th>skill</th>
                 <th>city</th>
                 <th>price</th>
-                <th>notes</th>
+                <!-- <th>notes</th> -->
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of itemArray">
                 <!-- <td>{{item.$key}}</td> -->
-                <td>{{item.email}}</td>
+                <!-- <td>{{item.email}}</td> -->
                 <td>{{item.name}}</td>
-                <td>{{item.phone}}</td>
+                <!-- <td>{{item.phone}}</td> -->
                 <td>{{item.skill}}</td>
                 <td>{{item.city}}</td>
                 <td>{{item.price}}</td>
-                <td>{{item.notes}}</td>
+                <!-- <td>{{item.notes}}</td> -->
+
+                <td> <a  class="uk-button uk-button-text" (click)="moreInfo(item.$key)">More Info</a>
 
                 <!-- <td> <button class="uk-button uk-button-primary uk-margin-small-right" type="button"
                             uk-toggle="target: #modal-example" (click)="editForm(item.$key)">Edit</button>
