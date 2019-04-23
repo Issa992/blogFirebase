@@ -4,6 +4,8 @@ import { Observable } from 'rxjs'
 import { Router } from '@angular/router';
 import { Action } from 'rxjs/internal/scheduler/Action';
 import { Key } from 'protractor';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 
 
@@ -23,10 +25,11 @@ export class MyskillComponent implements OnInit {
     skill: '',
     city: '',
     price: '',
-    notes: ''
+    notes: '',
   }
+  myUid:any;
 
-  constructor(public db: AngularFireDatabase,public route:Router) {
+  constructor(public db: AngularFireDatabase,public route:Router, private fire:AngularFireAuth) {
     this.itemList = db.list('skills')
 
     this.itemList.snapshotChanges().subscribe(actions => {
@@ -40,7 +43,10 @@ export class MyskillComponent implements OnInit {
       console.log(this.itemArray)
 
     })
-
+      //this.myUid=localStorage.getItem('uid')
+     this.myUid=this.fire.auth.currentUser.uid;
+    let UID=this.myUid;
+    console.log("UUUUIIIIIDDDDD::::::"+UID)
   }
 
   ngOnInit() {
@@ -107,5 +113,6 @@ export class ListItemClass {
   city: string;
   price: string;
   notes: string;
+  uid:string;
 
 }

@@ -48,5 +48,5 @@ logOut(){
   this.afauth.auth.signOut();
   this.isLoggedIn=false
   localStorage.setItem('isLoggedIn','false')
-  this.router.navigate(['home'])}
+  this.router.navigate(['login'])}
 }

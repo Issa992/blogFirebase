@@ -18,6 +18,7 @@ export class AddSkillComponent implements OnInit {
  
   data ={
     email:'',
+    uid:'',
     name:'' ,
     phone:'' ,
     skill:'' ,
@@ -35,8 +36,12 @@ export class AddSkillComponent implements OnInit {
   ngOnInit() {
    let user= this.fire.auth.currentUser.email;
    this.data.email=user;
+   let userUid=this.fire.auth.currentUser.uid;
+   this.data.uid=userUid;
+
+   console.log("UUUUUU::::"+userUid)
  
-    console.log("useEEEEEE::::"+this.data.email)
+    //console.log("useEEEEEE::::"+this.data.email)
   }
   addSkill(){
     this.itemList.push({
@@ -46,7 +51,8 @@ export class AddSkillComponent implements OnInit {
       city:this.data.city ,
       price:this.data.price,
       notes:this.data.notes,
-      email:this.data.email
+      email:this.data.email,
+      uid:this.data.uid
     })
     
     this.route.navigate(['/myskill'])

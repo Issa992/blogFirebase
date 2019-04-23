@@ -17,6 +17,7 @@ import { AllskillsComponent } from './allskills/allskills.component';
   import { AngularFireAuthModule } from '@angular/fire/auth';
   import { AngularFirestoreModule } from '@angular/fire/firestore';
  import { AngularFireDatabaseModule } from '@angular/fire/database';
+ import { CommonModule } from '@angular/common';  
 
 // //build Routs
 const routs: Routes = [
@@ -50,6 +51,7 @@ const routs: Routes = [
      AngularFireDatabaseModule,
     AppRoutingModule,
     RouterModule.forRoot(routs),
+    CommonModule,
     FormsModule
   ],
   providers: [],

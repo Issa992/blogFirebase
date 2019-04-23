@@ -2,6 +2,7 @@
     <table class="uk-table uk-table-divider">
         <thead>
             <tr>
+                <div>
                 <!-- <th>$key</th> -->
                 <th>email</th>
                 <th>name</th>
@@ -11,75 +12,80 @@
                 <th>price</th>
                 <th>notes</th>
                 <th>actions</th>
+            </div>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of itemArray">
-                <!-- <td>{{item.$key}}</td> -->
-                <td>{{item.email}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.phone}}</td>
-                <td>{{item.skill}}</td>
-                <td>{{item.city}}</td>
-                <td>{{item.price}}</td>
-                <td>{{item.notes}}</td>
+                 <div *ngIf="item.uid === myUid"> 
+                    <!-- <td>{{item.$key}}</td> -->
+                    <td>{{item.email}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.skill}}</td>
+                    <td>{{item.city}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.notes}}</td>
 
-                <td> <button class="uk-button uk-button-primary uk-margin-small-right" type="button"
-                        uk-toggle="target: #modal-example" (click)="editForm(item.$key)">Edit</button>
-                </td>
-                <td><button class="uk-button uk-button-danger uk-button-small"
-                        (click)="onDelete(item.$key)">Delete</button></td>
-
-
-                <!-- This is the modal -->
-                <div id="modal-example" uk-modal>
-                    <div class="uk-modal-dialog uk-modal-body">
-                        <h2 class="uk-modal-title">Edit</h2>
-
-                        <fieldset class="uk-fieldset">
+                    <td> <button class="uk-button uk-button-primary uk-margin-small-right" type="button"
+                            uk-toggle="target: #modal-example" (click)="editForm(item.$key)">Edit</button>
+                    </td>
+                    <td><button class="uk-button uk-button-danger uk-button-small"
+                            (click)="onDelete(item.$key)">Delete</button></td>
 
 
-                            <!-- <div class="uk-margin">
+                    <!-- This is the modal -->
+                    <div id="modal-example" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body">
+                            <h2 class="uk-modal-title">Edit</h2>
+
+                            <fieldset class="uk-fieldset">
+
+
+                                <!-- <div class="uk-margin">
                                 <input class="uk-input" type="text" placeholder="key" name="name" [(ngModel)]="data.$key" value="{{item.$key}}">
                             </div> -->
-                            <div class="uk-margin">
-                                <input class="uk-input" type="text" placeholder="Name" name="name"
-                                    [(ngModel)]="data.name">
-                            </div>
-                            <div class="uk-margin">
-                                <input class="uk-input" type="text" placeholder="Phone" name="Phone"
-                                    [(ngModel)]="data.phone">
-                            </div>
-                            <div class="uk-margin">
-                                <input class="uk-input" type="text" placeholder="Skill" name="Skill"
-                                    [(ngModel)]="data.skill">
-                            </div>
-                            <div class="uk-margin">
-                                <input class="uk-input" type="text" placeholder="City" name="city"
-                                    [(ngModel)]="data.city">
-                            </div>
-                            <div class="uk-margin">
-                                <input class="uk-input" type="text" placeholder="Price" name="price"
-                                    [(ngModel)]="data.price">
-                            </div>
+                                <div class="uk-margin">
+                                    <input class="uk-input" type="text" placeholder="Name" name="name"
+                                        [(ngModel)]="data.name">
+                                </div>
+                                <div class="uk-margin">
+                                    <input class="uk-input" type="text" placeholder="Phone" name="Phone"
+                                        [(ngModel)]="data.phone">
+                                </div>
+                                <div class="uk-margin">
+                                    <input class="uk-input" type="text" placeholder="Skill" name="Skill"
+                                        [(ngModel)]="data.skill">
+                                </div>
+                                <div class="uk-margin">
+                                    <input class="uk-input" type="text" placeholder="City" name="city"
+                                        [(ngModel)]="data.city">
+                                </div>
+                                <div class="uk-margin">
+                                    <input class="uk-input" type="text" placeholder="Price" name="price"
+                                        [(ngModel)]="data.price">
+                                </div>
 
 
-                            <div class="uk-margin">
-                                <textarea class="uk-textarea" rows="5" placeholder="Notes" name="notes"
-                                    [(ngModel)]="data.notes"></textarea>
-                            </div>
-                        </fieldset>
+                                <div class="uk-margin">
+                                    <textarea class="uk-textarea" rows="5" placeholder="Notes" name="notes"
+                                        [(ngModel)]="data.notes"></textarea>
+                                </div>
+                            </fieldset>
 
-                        <p class="uk-text-right">
-                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                            <button class="uk-button uk-button-primary" type="button" (click)="onEdit(item.$key)">Save</button>
-                        </p>
+                            <p class="uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <button class="uk-button uk-button-primary" type="button"
+                                    (click)="onEdit(item.$key)">Save</button>
+                            </p>
+                        </div>
                     </div>
-                </div>
+             </div> 
             </tr>
+
+
         </tbody>
     </table>
 
 
 </div>
-<!-- This is a button toggling the modal -->

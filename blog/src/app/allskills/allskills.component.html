@@ -1,40 +1,35 @@
 <div class="uk-padding" uk-grid>
-        <table class="uk-table uk-table-divider">
-            <thead>
-                <tr>
-                    <!-- <th>$key</th> -->
-                    <th>email</th>
+    <table class="uk-table uk-table-divider">
+        <thead>
+            <tr>
+                <!-- <th>$key</th> -->
+                <th>email</th>
+                <th>name</th>
+                <th>phone</th>
+                <th>skill</th>
+                <th>city</th>
+                <th>price</th>
+                <th>notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of itemArray">
+                <!-- <td>{{item.$key}}</td> -->
+                <td>{{item.email}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.skill}}</td>
+                <td>{{item.city}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.notes}}</td>
 
-                    <th>name</th>
-                    <th>phone</th>
-                    <th>skill</th>
-                    <th>city</th>
-                    <th>price</th>
-                    <th>notes</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of itemArray">
-                    <!-- <td>{{item.$key}}</td> -->
-                    <td>{{item.email}}</td>
-
-                    <td>{{item.name}}</td>
-                    <td>{{item.phone}}</td>
-                    <td>{{item.skill}}</td>
-                    <td>{{item.city}}</td>
-                    <td>{{item.price}}</td>
-                    <td>{{item.notes}}</td>
-    
-                    <td> <button class="uk-button uk-button-primary uk-margin-small-right" type="button"
+                <!-- <td> <button class="uk-button uk-button-primary uk-margin-small-right" type="button"
                             uk-toggle="target: #modal-example" (click)="editForm(item.$key)">Edit</button>
                     </td>
                     <td><button class="uk-button uk-button-danger uk-button-small"
-                            (click)="onDelete(item.$key)">Delete</button></td>
-    
-    
-                    <!-- This is the modal -->
-                    <div id="modal-example" uk-modal>
+                            (click)="onDelete(item.$key)">Delete</button></td> -->
+                <!-- This is the modal -->
+                <!-- <div id="modal-example" uk-modal>
                         <div class="uk-modal-dialog uk-modal-body">
                             <h2 class="uk-modal-title">Edit</h2>
     
@@ -76,11 +71,10 @@
                                 <button class="uk-button uk-button-primary" type="button" (click)="onEdit(item.$key)">Save</button>
                             </p>
                         </div>
-                    </div>
-                </tr>
-            </tbody>
-        </table>
-    
-    
-    </div>
-    <!-- This is a button toggling the modal -->
+                    </div> -->
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
